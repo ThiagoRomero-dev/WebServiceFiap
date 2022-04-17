@@ -1,6 +1,7 @@
 package br.com.fiap.smarticities.model;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,7 +15,8 @@ import java.util.Date;
 public class Estabelecimento {
 
     @Id
-    @GeneratedValue(generator = "estabelecimento",strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id_estabelecimento")
     private int id;
 

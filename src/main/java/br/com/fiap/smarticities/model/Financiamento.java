@@ -1,5 +1,7 @@
 package br.com.fiap.smarticities.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -13,7 +15,8 @@ import java.util.Date;
 public class Financiamento {
 
     @Id
-    @GeneratedValue(generator = "financiamento", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id_financiamento")
     private int id;
 
