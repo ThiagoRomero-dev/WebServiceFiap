@@ -2,6 +2,7 @@ package br.com.fiap.smarticities.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Calendar;
 import java.util.Date;
@@ -32,12 +33,11 @@ public class Financiamento {
     @Column(name="ds_tp_financiamento")
     private String descricaoTipoFinanciamento;
 
-    @NotBlank
+    @NotNull
     @Temporal(TemporalType.DATE)
     @Column(name = "dt_contratacao")
     private Date dataContratacao;
 
-    @NotBlank
     @Column(name = "vl_investimento")
     private float valorInvestimento;
 

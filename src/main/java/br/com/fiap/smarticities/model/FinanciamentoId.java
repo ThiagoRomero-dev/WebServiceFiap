@@ -5,16 +5,29 @@ import java.util.Objects;
 
 public class FinanciamentoId implements Serializable {
     private int id;
-    private Integer parceiro;
+    private int parceiro;
 
-    public FinanciamentoId(int financiamento, int parceiro) {
-        super();
-        this.id = financiamento;
+    public FinanciamentoId(int id, int parceiro) {
+        this.id = id;
         this.parceiro = parceiro;
     }
 
-    public FinanciamentoId(){
-        super();
+    public FinanciamentoId(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getParceiro() {
+        return parceiro;
+    }
+
+    public void setParceiro(int parceiro) {
+        this.parceiro = parceiro;
     }
 
     @Override
