@@ -9,10 +9,10 @@ import java.util.Date;
 
 @Entity
 @SequenceGenerator(name = "parceiro", sequenceName = "SQ_PARCEIRO", allocationSize = 1)
+@Table(name = "T_SIP_PARCEIRO")
 public class Parceiro {
 
     @Id
-    @SequenceGenerator(name = "parceiro", sequenceName = "SQ_PARCEIRO", allocationSize = 1)
     @GeneratedValue(generator = "parceiro", strategy = GenerationType.SEQUENCE)
     @Column(name = "id_parceiro")
     private int id;

@@ -4,7 +4,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -14,7 +13,6 @@ import java.util.Date;
 public class Financiamento {
 
     @Id
-    @SequenceGenerator(name = "financiamento", sequenceName = "SQ_FINANCIAMENTO", allocationSize = 1)
     @GeneratedValue(generator = "financiamento", strategy = GenerationType.SEQUENCE)
     @Column(name = "id_financiamento")
     private int id;
@@ -24,22 +22,34 @@ public class Financiamento {
     @JoinColumn(name = "id_parceiro")
     private Parceiro parceiro;
 
-  //  @ManyToOne(cascade = CascadeType.PERSIST)
-   // @JoinColumn(name = "id_estabelecimento")
-  //  private Estabelecimento estabelecimento;
+    @NotNull(message = "Estabelecimento obrigatório!")
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id_estabelecimento")
+    private Estabelecimento estabelecimento;
 
-    @NotBlank
+    @NotBlank(message = "Tipo Financiamento obrigatório!")
     @Size(max = 50)
     @Column(name="ds_tp_financiamento")
     private String descricaoTipoFinanciamento;
 
-    @NotNull
+    @NotNull(message = "Data contratação obrigatória!")
     @Temporal(TemporalType.DATE)
     @Column(name = "dt_contratacao")
     private Date dataContratacao;
 
+    @NotNull(message = "Valor investimento obrigatório!")
     @Column(name = "vl_investimento")
     private float valorInvestimento;
+
+    public Financiamento(int id, Parceiro parceiro, String descricaoTipoFinanciamento, Date dataContratacao, float valorInvestimento) {
+        this.id = id;
+        this.parceiro = parceiro;
+        this.descricaoTipoFinanciamento = descricaoTipoFinanciamento;
+        this.dataContratacao = dataContratacao;
+        this.valorInvestimento = valorInvestimento;
+    }
+
+    public Financiamento() {}
 
     public int getId() {
         return id;
@@ -57,13 +67,13 @@ public class Financiamento {
         this.parceiro = parceiro;
     }
 
-   // public Estabelecimento getEstabelecimento() {
-    //    return estabelecimento;
-   // }
+    public Estabelecimento getEstabelecimento() {
+        return estabelecimento;
+    }
 
-   // public void setEstabelecimento(Estabelecimento estabelecimento) {
-    //    this.estabelecimento = estabelecimento;
-    //}
+    public void setEstabelecimento(Estabelecimento estabelecimento) {
+        this.estabelecimento = estabelecimento;
+    }
 
     public String getDescricaoTipoFinanciamento() {
         return descricaoTipoFinanciamento;

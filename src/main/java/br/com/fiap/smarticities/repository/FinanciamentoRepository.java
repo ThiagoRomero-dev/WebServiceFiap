@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface FinanciamentoRepository extends JpaRepository<Financiamento, FinanciamentoId> {
     List<Financiamento> findByParceiro(Parceiro parceiro);
-    //List<Financiamento> findByEstabelecimento(Estabelecimento estabelecimento);
+    List<Financiamento> findByEstabelecimento(Estabelecimento estabelecimento);
     List<Financiamento> findByDataContratacao(Date dataContratacao);
     List<Financiamento> findByDescricaoTipoFinanciamento(String descricaoTipoFinanciamento);
 }
