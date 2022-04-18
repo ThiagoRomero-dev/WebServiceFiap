@@ -34,7 +34,6 @@ public class Tipo {
 
     public Tipo() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public int getId() {

@@ -40,7 +40,6 @@ public class Contrato {
 
     public Contrato() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public int getId() {

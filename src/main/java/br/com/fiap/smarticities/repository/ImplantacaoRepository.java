@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface ImplantacaoRepository extends JpaRepository<Implantacao, ImplantacaoId> {
     List<Implantacao> findByProjeto(Projeto projeto);
-  //  List<Implantacao> findByColaborador(Colaborador colaborador);
+    List<Implantacao> findByColaborador(Colaborador colaborador);
     List<Implantacao> findByDataEntrada(Date dataEntrada);
 }
