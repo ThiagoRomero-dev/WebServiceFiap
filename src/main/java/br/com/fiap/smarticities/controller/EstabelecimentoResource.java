@@ -1,7 +1,7 @@
 package br.com.fiap.smarticities.controller;
 
 import br.com.fiap.smarticities.model.Estabelecimento;
-import br.com.fiap.smarticities.model.Parceiro;
+//import br.com.fiap.smarticities.model.Parceiro;
 import br.com.fiap.smarticities.repository.EstabelecimentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

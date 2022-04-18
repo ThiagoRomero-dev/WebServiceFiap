@@ -24,10 +24,10 @@ public class Implantacao{
     @JoinColumn(name = "id_projeto")
     private Projeto projeto;
 
-   // @NotNull(message = "Colaborador obrigatório!")
-   // @ManyToOne(cascade=CascadeType.PERSIST)
-   // @JoinColumn(name = "id_colaborador")
-    //private Colaborador colaborador;
+    @NotNull(message = "Colaborador obrigatório!")
+    @ManyToOne(cascade=CascadeType.PERSIST)
+    @JoinColumn(name = "id_colaborador")
+    private Colaborador colaborador;
 
     @Temporal(TemporalType.DATE)
     @NotNull(message = "Data Entrada obrigatória!")
@@ -67,13 +67,13 @@ public class Implantacao{
         this.projeto = projeto;
     }
 
-   // public Colaborador getColaborador() {
-    //    return colaborador;
-   // }
+    public Colaborador getColaborador() {
+        return colaborador;
+   }
 
-   // public void setColaborador(Colaborador colaborador) {
-   //     this.colaborador = colaborador;
-   // }
+    public void setColaborador(Colaborador colaborador) {
+        this.colaborador = colaborador;
+    }
 
     public Date getDataEntrada() {
         return dataEntrada;
