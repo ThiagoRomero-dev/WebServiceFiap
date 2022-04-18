@@ -1,7 +1,6 @@
 package br.com.fiap.smarticities.model;
 
 import org.hibernate.annotations.GenericGenerator;
-//import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -53,7 +52,6 @@ public class Projeto{
 
     public Projeto() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public int getId() {

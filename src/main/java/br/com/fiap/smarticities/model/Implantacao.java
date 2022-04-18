@@ -41,14 +41,13 @@ public class Implantacao{
         super();
         this.id = id;
         this.projeto = projeto;
-      //  this.colaborador = colaborador;
+        this.colaborador = colaborador;
         this.dataEntrada = dataEntrada;
         this.dt_saida = dt_saida;
     }
 
     public Implantacao() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public int getId() {
